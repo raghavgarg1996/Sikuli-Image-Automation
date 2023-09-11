@@ -7,12 +7,12 @@ import org.sikuli.script.Screen;
 
 public class Main {
  //   static final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
-    static final String IMAGES_PATH = System.getProperty("user.dir") + "\\Images\\";
+    static final String IMAGES_PATH = System.getProperty("user.dir") + "\\src\\Images\\";
 
 
     public static void main(String[] args) {
     //    System.setProperty("webdriver.chrome.driver", "/Users/raghav.garg/Downloads/chromedriver"); // For Mac
-        System.setProperty("webdriver.chrome.driver", IMAGES_PATH + "Sikuli-Image-Automation\\src\\test\\resources\\chromedriver.exe"); // For Windows
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe"); // For Windows
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.dc.com/characters/batman");
@@ -30,8 +30,9 @@ public class Main {
   //      final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
 
         Screen screen = new Screen();
-        Pattern DCLogo = new Pattern(IMAGES_PATH + "dcLogo.PNG");
-        Pattern searchLogin = new Pattern(IMAGES_PATH + "searchLogin.PNG");
+        System.out.println(IMAGES_PATH);
+        Pattern DCLogo = new Pattern(IMAGES_PATH + "dcLogo.png");
+        Pattern searchLogin = new Pattern(IMAGES_PATH + "searchLogin.png");
         try {
             screen.wait(DCLogo, 5);
             screen.click(DCLogo);
