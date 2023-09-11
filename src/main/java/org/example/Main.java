@@ -6,11 +6,13 @@ import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
 public class Main {
-    final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
+ //   static final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
+    static final String IMAGES_PATH = System.getProperty("user.dir") + "\\Images\\";
+
 
     public static void main(String[] args) {
     //    System.setProperty("webdriver.chrome.driver", "/Users/raghav.garg/Downloads/chromedriver"); // For Mac
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\gpala\\Desktop\\Raghav\\Code\\Sikuli-Image-Automation\\src\\test\\resources\\chromedriver.exe"); // For Windows
+        System.setProperty("webdriver.chrome.driver", IMAGES_PATH + "Sikuli-Image-Automation\\src\\test\\resources\\chromedriver.exe"); // For Windows
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.dc.com/characters/batman");
@@ -25,7 +27,7 @@ public class Main {
     }
 
     public static void clickOnDcIconUsingImage() {
-        final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
+  //      final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
 
         Screen screen = new Screen();
         Pattern DCLogo = new Pattern(IMAGES_PATH + "dcLogo.PNG");
