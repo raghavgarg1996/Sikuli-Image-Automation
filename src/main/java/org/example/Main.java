@@ -9,8 +9,8 @@ public class Main {
     final String IMAGES_PATH = System.getProperty("user.dir") + "/Images/";
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/Users/raghav.garg/Downloads/chromedriver");
-
+    //    System.setProperty("webdriver.chrome.driver", "/Users/raghav.garg/Downloads/chromedriver"); // For Mac
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\gpala\\Desktop\\Raghav\\Code\\Sikuli-Image-Automation\\src\\test\\resources\\chromedriver.exe"); // For Windows
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.dc.com/characters/batman");
